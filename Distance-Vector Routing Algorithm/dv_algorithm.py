@@ -1,7 +1,7 @@
 #################################################################
 # Name: John Wolz, Stella Li, Nicole Robles
 # Date: February 29, 2020
-# Description: Distance Vector Algorithm
+# Description: Distance-Vector Routing Algorithm
 #################################################################
 
 import sys
@@ -29,8 +29,8 @@ def DistanceVector(input_data):
 
                 # finds distance from start node to intermediate node and from intermediate node to end node
                 intermediate_index = (j+1) % len(input_data[i])
-
-                if int(input_data[i][intermediate_index]) == 0: # ensures the intermediate node is not the start node
+                # ensures the intermediate node is not the start node
+                if int(input_data[i][intermediate_index]) == 0:
                     intermediate_index = (j+2) % len(input_data[i])
                 
                 distance1 = int(input_data[i][intermediate_index])
@@ -44,7 +44,7 @@ def DistanceVector(input_data):
 
 new_distance_vectors = DistanceVector(input_data)
 
-#output
+##################### PRINT #####################################
 print("Distance vector for node x:",input_data[0])
 print("Distance vector for node y:",input_data[1])
 print("Distance vector for node z:",input_data[2])
